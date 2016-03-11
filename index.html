@@ -22,6 +22,11 @@
 			margin: 0 auto;
 		}
 
+		#left, #right {
+			float: left;
+			width: 45%;
+		}
+
 		#inputbox {
 			border: 1px solid black;
 			height: 35px;
@@ -35,7 +40,7 @@
 			outline: none;
 		}
 
-		#addbutton {
+		#addbutton, #arraybutton {
 			text-decoration: none;
 			outline: none;
 			color: white;
@@ -57,7 +62,7 @@
 			text-align: center;
 		}*/
 
-		#addbutton:hover {
+		#addbutton:hover, #arraybutton:hover {
 			background-color: rgba(90, 188, 185, 0.8);
 		}
 
@@ -81,37 +86,46 @@
 
 <body>
 	<div id="outer">
-		<h3> hi! </h3>
+		<h3> hi and welcome to listmakr! </h3>
+
+		<h5> it's fun and easy to make lists.  start by typing something into the box and click enter when you want to add it to your list. once you've added all your items, click store and voila, your list will be stored for ever more so you never have to think about it again. </h5>
 
 
 		<!-- open wrapper div -->
 		<div id="wrapper">
 
-			<!-- div for the form -->
-			<div id="formDiv">
-				<form id="listForm">
-						<input id="listField" type="text" maxlength="50"></input>
+			<div id="left">
+				<!-- div for the form -->
+				<div id="formDiv">
+					<form id="listForm">
+							<input id="listField" type="text" maxlength="50"></input>
 
-					<div id="submitForm">
-						<button onClick="addListItem()" id="addbutton" type="button">
-							add </button>
+						<div id="submitForm">
+							<button onClick="addListItem()" id="addbutton" type="button">
+								add </button>
+						</div>
+					</form>
+
+					<!-- close div for the form -->
 					</div>
-				</form>
+				<!-- close the div for the left -->
+				</div>
 
-			<!-- close div for the form -->
-			</div>
+				<div id="right">
+					<!-- add the div for the list -->
+					<div id="listBox">
+						<ul id="listUo">
+							<li id="indvItem"></li>
 
-			<!-- add the div for the list -->
-			<div id="listBox">
-				<ul id="listUo">
-					<li id="indvItem"></li>
+						</ul>
 
-				</ul>
-			</div>
+						<button onClick="makeArrays()" id="arraybutton" type="button"> store </button>
+					</div>
 
-			<!-- close the div for the list -->
-			</div>
-
+					<!-- close the div for the list -->
+					</div>
+				<!-- close the div for the right -->
+				</div>
 			<!-- close wrapper div -->
 		</div>
 
