@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- <link href="components/fab-comp.html"> -->
+	<script src="main.js"></script>
+	
+	<style>
+
+		body {
+			margin: 0;
+		}
+
+		#outer {
+			margin: 10px;
+			font-family: helvetica;
+		}
+
+		#wrapper {
+			width: 100%;
+			height: 100vh;
+			margin: 0 auto;
+		}
+
+		#inputbox {
+			border: 1px solid black;
+			height: 35px;
+			width: 350px;
+			padding: 5px;
+			margin-left: 40px;
+			/*margin: 0 auto;*/
+		}
+
+		form {
+			outline: none;
+		}
+
+		#addbutton {
+			text-decoration: none;
+			outline: none;
+			color: white;
+			font-size: 20px;
+			height: 40px;
+			width: 80px;
+			background-color: blue;
+			margin-top: 10px;
+			margin-left: 60px;
+			background-color: rgba(90, 188, 185, 0.4);
+		}
+
+		/*#addbutton p {
+			font-family: helvetica;
+			font-size: 20px;
+			margin: 0 auto;
+			padding: 8px;
+			color: white;
+			text-align: center;
+		}*/
+
+		#addbutton:hover {
+			background-color: rgba(90, 188, 185, 0.8);
+		}
+
+		#listBox {
+			width: 500px;
+			height: auto;
+		}
+
+		#listUo {
+			list-style-type: none;
+			font-size: 35px;
+		}
+
+		#indvItem {
+			display: block;
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="outer">
+		<h3> hi! </h3>
+
+
+		<!-- open wrapper div -->
+		<div id="wrapper">
+
+			<!-- div for the form -->
+			<div id="formDiv">
+				<form id="listForm">
+						<input id="listField" type="text" maxlength="50"></input>
+
+					<div id="submitForm">
+						<button onClick="addListItem()" id="addbutton" type="button">
+							add </button>
+					</div>
+				</form>
+
+			<!-- close div for the form -->
+			</div>
+
+			<!-- add the div for the list -->
+			<div id="listBox">
+				<ul id="listUo">
+					<li id="indvItem"></li>
+
+				</ul>
+			</div>
+
+			<!-- close the div for the list -->
+			</div>
+
+			<!-- close wrapper div -->
+		</div>
+
+
+	<!-- close outer div -->
+	</div>
+
+
+
+
+</body>
+
+</html>
