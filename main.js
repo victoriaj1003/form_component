@@ -12,20 +12,7 @@ function addListItem() {
 		entry.onclick = function() {this.parentNode.removeChild(this);}
 }
  	
- 	// remove an item from the list
-
-	
-
-
-// function removeListItem() {
-// 	var item = document.getElementById("listUo");
-// 	li.parentNode.removeChild(li);
-// 	console.log('removed item');
-// 	// var list = document.getElementById('listUo');
-// 	// console.log("remove initiated");
-// 	// list.parentNode.removeChild(removal);
-// }
-
+ 	
 
 // push all list items into an array
 
@@ -34,7 +21,7 @@ function makeArrays() {
 
 	var theArray = [];
 
-	for (var i = 1; i < list.length; i++) {
+	for (var i = 0; i < list.length; i++) {
 	    var arrValue = list[i].innerHTML;
 	    console.log(arrValue);
 	    theArray.push(arrValue);
@@ -43,9 +30,8 @@ function makeArrays() {
 }
 
 
-// function clearList() {
-// 	console.log("clearing");
-// var elem = document.getElementById('listUo');
-// elem.parentNode.removeChild(elem);
-// }
+function clearList() {
+	console.log("clearing");
+var elem = document.getElementById('listUo').innerHTML = "";
+}
 
