@@ -25,6 +25,7 @@
 		#left, #right {
 			float: left;
 			width: 45%;
+			height: 500px;
 		}
 
 		#inputbox {
@@ -40,7 +41,7 @@
 			outline: none;
 		}
 
-		#addbutton, #arraybutton {
+		#addbutton, #arraybutton, #clearbutton {
 			text-decoration: none;
 			outline: none;
 			color: white;
@@ -62,18 +63,20 @@
 			text-align: center;
 		}*/
 
-		#addbutton:hover, #arraybutton:hover {
+		#addbutton:hover, #arraybutton:hover, #clearbutton:hover {
 			background-color: rgba(90, 188, 185, 0.8);
 		}
 
 		#listBox {
 			width: 500px;
-			height: auto;
+			height: 500px;
+			overflow: scroll;
 		}
 
 		#listUo {
 			list-style-type: none;
 			font-size: 35px;
+			height: 300px;
 		}
 
 		#indvItem {
@@ -81,14 +84,19 @@
 			text-decoration: none;
 		}
 
+		li:hover {
+			background-color: rgba(17, 75, 95, .45);
+			color: white;
+		}
+
 	</style>
 </head>
 
 <body>
 	<div id="outer">
-		<h3> hi and welcome to listmakr! </h3>
+		<h3> hi and welcome to the listmakr-5000! </h3>
 
-		<h5> it's fun and easy to make lists.  start by typing something into the box and click enter when you want to add it to your list. once you've added all your items, click store and voila, your list will be stored for ever more so you never have to think about it again. </h5>
+		<h5> It's fun and easy to make lists.  Start by typing something into the box and click enter when you want to add it to your list. IF you decide you don't want an item just click on it and it will disappear.  Once you've added all your items, click store and voila, your list will be stored for ever more so you never have to think about it again. </h5>
 
 
 		<!-- open wrapper div -->
@@ -115,12 +123,19 @@
 					<!-- add the div for the list -->
 					<div id="listBox">
 						<ul id="listUo">
-							<li id="indvItem"></li>
+							<li ondblclick="removeListItem()" id="indvItem"></li>
+							
+
+
 
 						</ul>
 
 						<button onClick="makeArrays()" id="arraybutton" type="button"> store </button>
-					</div>
+
+						<!-- <button onClick="clearList()" id="clearbutton" type="button"> clear </button>
+					</div> -->
+
+
 
 					<!-- close the div for the list -->
 					</div>
