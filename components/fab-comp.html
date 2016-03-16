@@ -7,6 +7,157 @@
 <!-- Please use only straight HTML, CSS, and Javascript. Do not use any CSS frameworks or external Javascript libraries. -->
 
 <!-- for web components, html goes in template. -->
-<template>
-	
+
+<div id="fabForm">Fab Form</div>
+<template id="fabFormTemplate">
+		<style>
+
+		body {
+			margin: 0;
+		}
+
+		#outer {
+			margin: 10px;
+			font-family: helvetica;
+		}
+
+		#wrapper {
+			width: 100%;
+			height: 100vh;
+			margin: 0 auto;
+		}
+
+		#left, #right {
+			float: left;
+			width: 45%;
+			height: 500px;
+		}
+
+		#inputbox {
+			border: 1px solid black;
+			height: 35px;
+			width: 400px;
+			padding: 5px;
+			margin-left: 40px;
+			/*margin: 0 auto;*/
+		}
+
+		form {
+			outline: none;
+		}
+
+		#addbutton, #arraybutton, #clearbutton {
+			text-decoration: none;
+			outline: none;
+			color: white;
+			font-size: 20px;
+			height: 40px;
+			width: 80px;
+			background-color: blue;
+			margin-top: 10px;
+			margin-left: 60px;
+			background-color: rgba(90, 188, 185, 0.4);
+		}
+
+		/*#addbutton p {
+			font-family: helvetica;
+			font-size: 20px;
+			margin: 0 auto;
+			padding: 8px;
+			color: white;
+			text-align: center;
+		}*/
+
+		#addbutton:hover, #arraybutton:hover, #clearbutton:hover {
+			background-color: rgba(90, 188, 185, 0.8);
+		}
+
+		#listBox {
+			width: 500px;
+			height: 500px;
+			overflow: scroll;
+		}
+
+		#listUo {
+			list-style-type: none;
+			font-size: 35px;
+			height: 350px;
+			overflow: scroll;
+			border: 1px solid black;
+		}
+
+		#indvItem {
+			display: block;
+			text-decoration: none;
+		}
+
+		li:hover {
+			background-color: rgba(17, 75, 95, .45);
+			color: white;
+		}
+
+		#displayArray {
+			margin-top: 50px;
+		}
+
+	</style>
+
+	<div id="outer">
+		<h3> hi and welcome to the listmakr-5000! </h3>
+
+		<h5> It's fun and easy to make lists.  Start by typing something into the box and click enter when you want to add it to your list. If you decide you don't want an item just click on it and it will disappear.  Once you've added all your items, click store and voila, your list will be stored for ever more so you never have to think about it again. </h5>
+
+
+		<!-- open wrapper div -->
+		<div id="wrapper">
+
+			<div id="left">
+				<!-- div for the form -->
+				<div id="formDiv">
+					<form id="listForm">
+							<input id="listField" type="text" maxlength="50" autofocus="autofocus"></input>
+
+						<div id="submitForm">
+							<button onClick="addListItem()" id="addbutton" type="button">
+								add </button>
+						</div>
+					</form>
+
+					<!-- close div for the form -->
+					</div>
+
+					<div id="displayArray"> </div>
+				<!-- close the div for the left -->
+				</div>
+
+				<div id="right">
+					<!-- add the div for the list -->
+					<div id="listBox">
+						<ul id="listUo">
+							<li ondblclick="removeListItem()" id="indvItem"></li>
+						</ul>
+
+						<button onClick="makeArrays()" id="arraybutton" type="button"> store </button>
+
+						<button onClick="clearList()" id="clearbutton" type="button"> clear </button>
+					</div>
+
+					<!-- close the div for the list -->
+					</div>
+				<!-- close the div for the right -->
+				</div>
+			<!-- close wrapper div -->
+		</div>
+
+
+	<!-- close outer div -->
+	</div>
+
 </template>
+
+<script>
+var shadow = document.querySelector('#fabForm').createShadowRoot();
+var template = document.querySelector('#fabFormTemplate');
+var clone = document.importNode(template.content, true);
+shadow.appendChild(clone);
+</script>

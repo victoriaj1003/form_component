@@ -91,6 +91,10 @@
 			color: white;
 		}
 
+		#displayArray {
+			margin-top: 50px;
+		}
+
 	</style>
 </head>
 
@@ -108,7 +112,7 @@
 				<!-- div for the form -->
 				<div id="formDiv">
 					<form id="listForm">
-							<input id="listField" type="text" maxlength="50"></input>
+							<input id="listField" type="text" maxlength="50" autofocus="autofocus"></input>
 
 						<div id="submitForm">
 							<button onClick="addListItem()" id="addbutton" type="button">
@@ -118,6 +122,12 @@
 
 					<!-- close div for the form -->
 					</div>
+
+					<div id="displayArray">
+
+					</div>
+
+
 				<!-- close the div for the left -->
 				</div>
 
@@ -126,18 +136,12 @@
 					<div id="listBox">
 						<ul id="listUo">
 							<li ondblclick="removeListItem()" id="indvItem"></li>
-							
-
-
-
 						</ul>
 
 						<button onClick="makeArrays()" id="arraybutton" type="button"> store </button>
 
 						<button onClick="clearList()" id="clearbutton" type="button"> clear </button>
 					</div>
-
-
 
 					<!-- close the div for the list -->
 					</div>
