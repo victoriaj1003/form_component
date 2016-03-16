@@ -4,8 +4,9 @@ function addListItem() {
 	var item = document.getElementById('listField').value;
 	var entry = document.createElement('li');
 	if ( item == null || item == "") {
-		alert("please add something for your list");
+		document.getElementById("alertBox").innerHTML = "please add something for your list";
 	} else {
+		document.getElementById("alertBox").innerHTML = "";
 	entry.appendChild(document.createTextNode(item));
 	list.appendChild(entry);
 	document.getElementById('listField').value = "";
