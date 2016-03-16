@@ -3,6 +3,9 @@ function addListItem() {
 	var list = document.getElementById('listUo');
 	var item = document.getElementById('listField').value;
 	var entry = document.createElement('li');
+	if ( item == null || item == "") {
+		alert("please add something for your list");
+	} else {
 	entry.appendChild(document.createTextNode(item));
 	list.appendChild(entry);
 	document.getElementById('listField').value = "";
@@ -10,6 +13,7 @@ function addListItem() {
 		entry.onmouseenter = function() {this.innerHTML = "click to remove"}
 		entry.onmouseout = function() {this.innerHTML = item}
 		entry.onclick = function() {this.parentNode.removeChild(this);}
+}
 }
  	
  	
