@@ -26,6 +26,7 @@ function makeArrays() {
 	    console.log(arrValue);
 	    theArray.push(arrValue);
 	    console.log(theArray);
+	    document.getElementById("displayArray").innerHTML = ("[ " + theArray + " ]");
 	}
 }
 
